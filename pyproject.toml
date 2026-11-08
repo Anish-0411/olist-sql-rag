@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "olist-sql-rag"
+version = "0.1.0"
+description = "Restricted Olist Text-to-SQL service"
+requires-python = ">=3.11,<3.15"
+dependencies = [
+  "fastapi==0.162.0", "uvicorn==0.54.0", "pydantic==2.14.1",
+  "pydantic-settings==2.16.1", "SQLAlchemy==2.1.6",
+  "psycopg[binary]==3.3.6", "sqlglot==30.25.0", "httpx==0.28.1"
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0", "ruff==0.17.3"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["integration: requires a separately provisioned PostgreSQL 16 test database"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

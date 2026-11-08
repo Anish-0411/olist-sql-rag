@@ -1,0 +1,32 @@
+.venv/
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+archive/
+logs/
+
+# Python environments
+venv/
+env/
+
+# macOS
+.DS_Store
+
+# Build artifacts
+build/
+dist/
+.coverage
+htmlcov/
+
+# IDE
+.idea/
+.vscode/
+
+# Local logs and generated reports
+*.log
+
+# Generated reports and test outputs
+/reports/
